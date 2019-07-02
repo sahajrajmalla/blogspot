@@ -1,5 +1,44 @@
 {% extends 'blog/layout.html' %}
+{% block style %}
+.fakeimg {
+background-color: #aaa;
+width: 100%;
+height: auto;
+}
+
+/* Add a card effect for articles */
+.card {
+background-color: white;
+padding: 20px;
+margin-top: 20px;
+}
+{% endblock style %}
 {% block content %}
-<div>
-<h1>hello world!</h1>
-{% endblock content %}
+{% for blog in blogs %}
+<div class="card">
+    <div>
+        <h2>{{blog.title}} by <b>{{blog.author}}</b></h2>
+        <h5>{{blog.date}}</h5>
+    </div>
+    <div>
+        <p>{{blog.content}}</p>
+        <div class="fakeimg" style="height:200px;">Image</div>
+    </div>
+    <div>
+        <span>respect</span>
+        <span>thoughts</span>
+        <span>share</span>
+    </div>
+    <div>
+        <h4>Thoughts</h4>
+        <div>
+            <p>{{blog.author}}</p><span>{{blog.date}}</span>
+            <p>{{blog.comment}}</p>
+        </div>
+    </div>
+
+{% endfor %}
+
+
+
+    {% endblock content %}

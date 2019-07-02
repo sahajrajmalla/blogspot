@@ -98,6 +98,9 @@
                 float: none;
             }
         }
+
+    {% block style %}
+    {% endblock style %}
     </style>
     {% block head %}
     {% endblock head %}
@@ -152,7 +155,7 @@
                     <a href="#about">About</a>
                 </div>
             </div>
-            <div class="col-sm-6" style="background-color: white">
+            <div class="col-sm-9" style="background-color: white">
                 {% block content %}
                 {% endblock content %}
             </div>
