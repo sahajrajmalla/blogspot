@@ -1,4 +1,7 @@
 {% extends 'blog/layout.html' %}
 {% block content %}
-<h1>{{user.username}}</h1>
+<div>
+    <img class="rounded-circle account-img" src="{{user.profile.p_picture.url}}">
+    <h1>{{user.username}}</h1>
+</div>
 {% endblock content %}
