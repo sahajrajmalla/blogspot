@@ -1,17 +1,24 @@
 {% extends 'blog/layout.html' %}
 {% load crispy_forms_tags %}
 {% block content %}
-<div class = "container">
-<img src = "{{user.profile.p_picture.url}}">
-
-<form method = "POST" enctype = "multipart/form-data">
-{% csrf_token %}
-<fieldset><legend>Update</legend>
-{{Uform|crispy}}
-{{Pform|crispy}}
-</fieldset>
-<div class = "form-group">
-<button class = "btn btn-outline-info" type= "submit">Update</button>
+<div class="content-section">
+    <div class="media">
+        <img class="rounded-circle account-img" src="{{ user.profile.p_picture.url }}">
+        <div class="account-heading">{{ user.username }}
+            <p class="text-secondary">{{ user.email }}</p>
+        </div>
+    </div>
 </div>
+
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <fieldset>
+        <legend>Update</legend>
+        {{Uform|crispy}}
+        {{Pform|crispy}}
+    </fieldset>
+    <div class="form-group">
+        <button class="btn btn-outline-info" type="submit">Update</button>
+    </div>
 </form>
 {% endblock content %}
