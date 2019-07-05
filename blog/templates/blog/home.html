@@ -26,7 +26,9 @@ margin-top: 20px;
 {% for blog in blogs %}
 <div class="card">
     <div>
-        <h2>{{blog.title}} by <b>{{blog.author}}</b></h2>
+        <img class="rounded-circle article-img" src="{{post.author.profile.p_picture.url}}">
+        <h2>{{blog.title}} by
+            <b>{{blog.author}}</b></h2>
         <h5>{{blog.date}}</h5>
     </div>
     <div>
