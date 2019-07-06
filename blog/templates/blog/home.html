@@ -26,37 +26,33 @@ margin-top: 20px;
 {% for blog in blogs %}
 <div class="card">
     <div>
+
         <div class="content-section">
-            <div class="media">
-                <img class="rounded-circle article-img" src="{{post.author.profile.p_picture.url}}">
-                <div class="account-heading">{{ user.username }}
-                    <p class="text-secondary">{{ user.email }}</p>
-                </div>
+            <h2>
+                <img class="rounded-circle" style="width: 150px; height; 150px"
+                    src="{{ blog.author.profile.image.url }}">{{blog.title}} by
+                <b>{{blog.author}}</b></h2>
+            <h5>{{blog.date}}</h5>
+        </div>
+        <div>
+            <p>{{blog.content}}</p>
+            <div class="fakeimg" style="height:200px;">Image</div>
+        </div>
+        <div>
+            <span>respect</span>
+            <span>thoughts</span>
+            <span>share</span>
+        </div>
+        <div>
+            <h4>Thoughts</h4>
+            <div>
+                <p>{{blog.author}}</p><span>{{blog.date}}</span>
+                <p>{{blog.comment}}</p>
             </div>
         </div>
-        <h2>{{blog.title}} by
-            <b>{{blog.author}}</b></h2>
-        <h5>{{blog.date}}</h5>
-    </div>
-    <div>
-        <p>{{blog.content}}</p>
-        <div class="fakeimg" style="height:200px;">Image</div>
-    </div>
-    <div>
-        <span>respect</span>
-        <span>thoughts</span>
-        <span>share</span>
-    </div>
-    <div>
-        <h4>Thoughts</h4>
-        <div>
-            <p>{{blog.author}}</p><span>{{blog.date}}</span>
-            <p>{{blog.comment}}</p>
-        </div>
-    </div>
 
-    {% endfor %}
+        {% endfor %}
 
 
 
-    {% endblock content %}
+        {% endblock content %}
