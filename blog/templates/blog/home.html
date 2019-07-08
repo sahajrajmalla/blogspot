@@ -31,9 +31,16 @@ margin-top: 20px;
             <h2>
                 <img class="rounded-circle" style="width: 150px; height; 150px"
                     src="{{ blog.author.profile.image.url }}">
-                    <a class = "article-title" href= "{% url 'blog-detail' blog.id %}">{{blog.title}}</a> by
+                <a class="article-title" href="{% url 'blog-detail' blog.id %}">{{blog.title}}</a> by
                 <b>{{blog.author}}</b></h2>
             <h5>{{blog.date}}</h5>
+
+            {% if blog.author == user %}
+            <div>
+                <a class="btn btn-outline-danger" href="{% url 'blog-delete' blog.id %}">Delete</a>
+                <a class="btn btn-outline-primary" href="{% url 'blog-update' blog.id %}">Update</a>
+            </div>
+            {% endif %}
         </div>
         <div>
             <p>{{blog.content}}</p>
