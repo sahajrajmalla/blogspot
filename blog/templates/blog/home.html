@@ -23,8 +23,8 @@ margin-top: 20px;
 {% endif %}
 {% endblock messages %}
 {% block content %}
-{% for blog in blogs %}
 <div class="card">
+{% for blog in blogs %}
     <div>
 
         <div class="content-section">
@@ -44,7 +44,7 @@ margin-top: 20px;
         </div>
         <div>
             <p>{{blog.content}}</p>
-            <div class="fakeimg" style="height:200px;">Image</div>
+            <div class="fakeimg" style="height:200px">Image</div>
         </div>
         <div>
             <span>respect</span>
