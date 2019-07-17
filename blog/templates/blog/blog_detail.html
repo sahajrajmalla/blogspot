@@ -1,0 +1,57 @@
+{% extends 'blog/layout.html' %}
+{% block style %}
+.fakeimg {
+background-color: #aaa;
+width: 100%;
+height: auto;
+}
+
+/* Add a card effect for articles */
+.card {
+background-color: white;
+padding: 20px;
+margin-top: 20px;
+}
+{% endblock style %}
+{% block messages %}
+{% if messages %}
+{% for message in messages %}
+<div class="alert alert-{{message.tags}}">
+    {{message}}
+</div>
+{% endfor %}
+{% endif %}
+{% endblock messages %}
+{% block content %}
+<div class="card">
+    <div>
+
+        <div class="content-section">
+            <h2>
+                <img class="rounded-circle" style="width: 150px; height; 150px"
+                    src="{{ object.author.profile.image.url }}">{{object.title}} by
+                <b>{{object.author}}</b></h2>
+            <h5>{{object.date}}</h5>
+
+        </div>
+
+        <div>
+            <p>{{object.content}}</p>
+            <div class="fakeimg" style="height:200px;">Image</div>
+        </div>
+        <div>
+            <span>respect</span>
+            <span>thoughts</span>
+            <span>share</span>
+        </div>
+        <div>
+            <h4>Thoughts</h4>
+            <div>
+                <p>{{object.author}}</p><span>{{blog.date}}</span>
+                <p>{{object.comment}}</p>
+            </div>
+        </div>
+
+
+
+        {% endblock content %}
